@@ -11,12 +11,10 @@ import rendered from "./rendered";
 import routes from "../routes";
 import useStore from "./createStore";
 
-const { GRAPH_URL } = process.env;
-
 export default app => {
 	app.get("*", (req, res) => {
 		const linkHttp = createUploadLink({
-			uri: GRAPH_URL,
+			uri: process.env.GRAPH_URL,
 			credentials: "include",
 			headers: {
 				cookie: req.header("Cookie")
