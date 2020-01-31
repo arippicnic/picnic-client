@@ -7,7 +7,7 @@ import serverSetup from "./server/start-server";
 
 const app = express();
 
-// modulesSetup(app);
+modulesSetup(app);
 
 staticSetup(app);
 
