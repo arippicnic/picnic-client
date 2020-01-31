@@ -9,13 +9,13 @@ const app = express();
 
 modulesSetup(app);
 
-// staticSetup(app);
+staticSetup(app);
 
-// ssrSetup(app);
+ssrSetup(app);
 
-app.get("/", (req, res) => {
-	res.send("asdf");
-})
+// app.get("/", (req, res) => {
+// 	res.send("asdf");
+// })
 
 serverSetup(app);
 
