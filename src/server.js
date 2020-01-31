@@ -11,7 +11,7 @@ const app = express();
 
 staticSetup(app);
 
-ssrSetup(app);
+// ssrSetup(app);
 
 // app.get("/", (req, res) => {
 // 	res.send("asdf");
