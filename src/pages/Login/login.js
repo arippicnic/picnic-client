@@ -1,6 +1,7 @@
 import React, { memo, useState } from "react";
 import { connect } from "react-redux";
 import { Helmet } from "react-helmet";
+import { Button } from 'reactstrap';
 
 import { loginUser } from "../../actions";
 
@@ -30,7 +31,7 @@ const LoginPage = ({ loginUser }) => {
 				<input name="email" onChange={asdf} />
 				<label>password</label>
 				<input name="password" onChange={asdf} />
-				<button type="submit">submit</button>
+				<Button color="primary" type="submit">submit</Button>
 			</form>
 		</div>
 	);

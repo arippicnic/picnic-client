@@ -1,5 +1,6 @@
 import path from "path";
 import webpack from "webpack";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 import getEntry from "./getEntry";
 import getPlugins from "./getPlugins";
@@ -9,6 +10,7 @@ export default env => {
 		throw new Error("webpack --env.MODE option is not specified");
 	}
 	const isDev = env.MODE === "dev";
+	const USE_CSS_MODULES = true;
 	return {
 		mode: isDev ? "development" : "production",
 		devtool: isDev ? "eval-source-map" : false,
@@ -26,6 +28,59 @@ export default env => {
 					test: /\.js$/,
 					exclude: /(node_modules|bower_components)/,
 					loader: "babel-loader"
+				},
+				{
+					test: /\.css$/,
+					use: [
+						{
+							loader: MiniCssExtractPlugin.loader,
+							options: {
+								hmr: isDev,
+								reloadAll: true
+							}
+						},
+						{
+							loader: "css",
+							options: {
+								importLoaders: 1,
+								modules: USE_CSS_MODULES && {
+									localIdentName: isDev
+										? "[name]__[local]"
+										: "[hash:base64:5]",
+									context: path.resolve(process.cwd(), "src")
+								},
+								sourceMap: true
+							}
+						},
+						{ loader: "postcss", options: { sourceMap: true } }
+					]
+				},
+				{
+					test: /\.(scss|sass)$/,
+					use: [
+						{
+							loader: MiniCssExtractPlugin.loader,
+							options: {
+								hmr: isDev,
+								reloadAll: true
+							}
+						},
+						{
+							loader: "css",
+							options: {
+								importLoaders: 2,
+								modules: USE_CSS_MODULES && {
+									localIdentName: isDev
+										? "[name]__[local]"
+										: "[hash:base64:5]",
+									context: path.resolve(process.cwd(), "src")
+								},
+								sourceMap: true
+							}
+						},
+						{ loader: "postcss", options: { sourceMap: true } },
+						{ loader: "sass", options: { sourceMap: true } }
+					]
 				}
 			]
 		},

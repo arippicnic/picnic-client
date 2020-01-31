@@ -6,6 +6,7 @@
   "plugins": [
   	"react-hot-loader/babel",
     "@babel/plugin-transform-runtime",
-    "@loadable/babel-plugin"
+    "@loadable/babel-plugin",
+    "@babel/plugin-syntax-dynamic-import"
   ]
 }

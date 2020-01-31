@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
+import { createStore, applyMiddleware } from "redux";
 import { ApolloProvider } from "react-apollo";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { Provider } from "react-redux";
