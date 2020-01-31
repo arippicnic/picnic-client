@@ -4,10 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./build/server.js",
+    "start": "node index.js",
     "dev": "yarn clean && env-cmd -f ./config/env/dev.env nodemon index.js --files .",
-    "prod": "yarn prod:build:server && yarn prod:build:src",
-    "prod:build:server": "babel ./src --out-dir build",
+    "prod": "yarn prod:build:src",
     "prod:build:src": "webpack --env.MODE=prod --progress --hide-modules --config ./config/webpack/webpack.config.babel.js",
     "clean": "rm -rf build && mkdir build",
     "heroku-postbuild": "yarn prod"
