@@ -1,21 +1,17 @@
 import express from "express";
 
-// import modulesSetup from "./server/modules";
-// import staticSetup from "./server/static";
-// import ssrSetup from "./server/ssrRequest";
+import modulesSetup from "./server/modules";
+import staticSetup from "./server/static";
+import ssrSetup from "./server/ssrRequest";
 import serverSetup from "./server/start-server";
 
 const app = express();
 
-// modulesSetup(app);
+modulesSetup(app);
 
-// staticSetup(app);
+staticSetup(app);
 
-// ssrSetup(app);
-
-app.get("/", (req, res) => {
-	res.send("asdf");
-})
+ssrSetup(app);
 
 serverSetup(app);
 
