@@ -1,6 +1,8 @@
 import path from "path";
 import webpack from "webpack";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import UglifyJsPlugin from "uglifyjs-webpack-plugin";
+import OptimizeCSSAssetsPlugin from "optimize-css-assets-webpack-plugin";
 
 import getEntry from "./getEntry";
 import getPlugins from "./getPlugins";
@@ -11,6 +13,20 @@ export default env => {
 	}
 	const isDev = env.MODE === "dev";
 	const USE_CSS_MODULES = true;
+	const optimization_dev = {
+		minimize: false
+	};
+	const optimization_prod = {
+		minimizer: [
+			new UglifyJsPlugin({
+				cache: true,
+				parallel: true,
+				sourceMap: true
+			}),
+			new OptimizeCSSAssetsPlugin({})
+		]
+	};
+	const optimization = isDev ? optimization_dev : optimization_prod;
 	return {
 		mode: isDev ? "development" : "production",
 		devtool: isDev ? "eval-source-map" : false,
@@ -74,7 +90,7 @@ export default env => {
 						},
 						{ loader: "postcss", options: { sourceMap: true } }
 					]
-				},
+				}
 			]
 		},
 		resolve: {
@@ -86,6 +102,7 @@ export default env => {
 		resolveLoader: {
 			moduleExtensions: ["-loader"]
 		},
-		plugins: getPlugins({ isDev, webpack })
+		plugins: getPlugins({ isDev, webpack }),
+		optimization
 	};
 };
