@@ -13,25 +13,31 @@ export default env => {
 	}
 	const isDev = env.MODE === "dev";
 	const USE_CSS_MODULES = true;
-	const optimization_dev = {
-		minimize: false
-	};
-	const optimization_prod = {
-		minimizer: [
-			new UglifyJsPlugin({
-				cache: true,
-				parallel: true,
-				sourceMap: true
-			}),
-			new OptimizeCSSAssetsPlugin({})
-		]
-	};
-	const optimization = isDev ? optimization_dev : optimization_prod;
 	return {
 		mode: isDev ? "development" : "production",
 		devtool: isDev ? "eval-source-map" : false,
 		context: path.resolve(process.cwd()),
 		entry: getEntry(isDev),
+		optimization: {
+			minimizer: [
+				new UglifyJsPlugin({
+					cache: true,
+					parallel: true,
+					sourceMap: true
+				}),
+				new OptimizeCSSAssetsPlugin({
+					cssProcessorPluginOptions: {
+						preset: [
+							"default",
+							{ discardComments: { removeAll: !isDev } }
+						]
+					}
+				})
+			],
+			splitChunks: {
+				chunks: isDev ? "async" : "all"
+			}
+		},
 		output: {
 			path: path.resolve(process.cwd(), "./build/public/assets"),
 			publicPath: "/assets/",
@@ -102,7 +108,6 @@ export default env => {
 		resolveLoader: {
 			moduleExtensions: ["-loader"]
 		},
-		plugins: getPlugins({ isDev, webpack }),
-		optimization
+		plugins: getPlugins({ isDev, webpack })
 	};
 };
