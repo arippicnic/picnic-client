@@ -30,7 +30,27 @@ export default env => {
 					loader: "babel-loader"
 				},
 				{
-					test: /\.css$/,
+					test: /\.(css|scss)$/,
+					exclude: /\.module\.(css|scss)$/,
+					use: [
+						{
+							loader: MiniCssExtractPlugin.loader,
+							options: {
+								hmr: isDev,
+								reloadAll: true
+							}
+						},
+						{
+							loader: "css",
+							options: {
+								sourceMap: true
+							}
+						},
+						{ loader: "postcss", options: { sourceMap: true } }
+					]
+				},
+				{
+					test: /\.module\.(css|scss)$/,
 					use: [
 						{
 							loader: MiniCssExtractPlugin.loader,
@@ -55,33 +75,6 @@ export default env => {
 						{ loader: "postcss", options: { sourceMap: true } }
 					]
 				},
-				{
-					test: /\.(scss|sass)$/,
-					use: [
-						{
-							loader: MiniCssExtractPlugin.loader,
-							options: {
-								hmr: isDev,
-								reloadAll: true
-							}
-						},
-						{
-							loader: "css",
-							options: {
-								importLoaders: 2,
-								modules: USE_CSS_MODULES && {
-									localIdentName: isDev
-										? "[name]__[local]"
-										: "[hash:base64:5]",
-									context: path.resolve(process.cwd(), "src")
-								},
-								sourceMap: true
-							}
-						},
-						{ loader: "postcss", options: { sourceMap: true } },
-						{ loader: "sass", options: { sourceMap: true } }
-					]
-				}
 			]
 		},
 		resolve: {

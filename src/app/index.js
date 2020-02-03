@@ -3,7 +3,7 @@ import { renderRoutes } from "react-router-config";
 import { Link } from "react-router-dom";
 import { Header } from "../components";
 
-import styles from "./app.scss";
+import styles from "./app.module.scss";
 
 const App = ({ route }) => (
 	<div className={styles.app}>

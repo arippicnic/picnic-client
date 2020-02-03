@@ -8,7 +8,7 @@ const isDev = nodeEnv === 'development';
 module.exports = () => {
   require('css-modules-require-hook')({
     generateScopedName: isDev ? '[name]__[local]' : '[hash:base64:5]',
-    extensions: ['.css', '.scss', '.sass'],
+    extensions: ['.css', '.scss'],
     prepend: [...postcssConfig.plugins],
     preprocessCss: (data, filename) =>
       sass.renderSync({ data, file: filename }).css,
