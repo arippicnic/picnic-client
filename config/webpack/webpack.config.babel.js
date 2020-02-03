@@ -11,7 +11,7 @@ export default env => {
 	if (!env || !env.MODE) {
 		throw new Error("webpack --env.MODE option is not specified");
 	}
-	const isDev = env.MODE === "dev";
+	 const isDev = env.MODE === "dev";
 	const USE_CSS_MODULES = true;
 	return {
 		mode: isDev ? "development" : "production",
