@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "env-cmd -f ./config/env/dev.env nodemon index.js --files .",
-    "prod": "yarn prod:build:src",
+    "dev": "yarn clean && env-cmd -f ./config/env/dev.env nodemon index.js --files .",
+    "prod": "yarn clean && yarn prod:build:src",
     "prod:build:src": "webpack --env.MODE=prod --progress --hide-modules --config ./config/webpack/webpack.config.babel.js",
     "clean": "rm -rf build && mkdir build",
     "heroku-postbuild": "yarn prod"
