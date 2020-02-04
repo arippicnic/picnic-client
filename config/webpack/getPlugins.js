@@ -2,10 +2,12 @@ import path from "path";
 import ManifestPlugin from "webpack-manifest-plugin";
 import LoadablePlugin from "@loadable/webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import CopyWebpackPlugin from "copy-webpack-plugin";
 import { CleanWebpackPlugin } from "clean-webpack-plugin";
 
 export default ({ isDev, webpack }) => {
 	const plugins = [
+		new CleanWebpackPlugin(),
 		new ManifestPlugin({
 			fileName: path.resolve(
 				process.cwd(),
@@ -21,11 +23,13 @@ export default ({ isDev, webpack }) => {
 			filename: isDev ? "[name].css" : "[name].[contenthash:8].css",
 			chunkFilename: isDev ? "[id].css" : "[id].[contenthash:8].css"
 		}),
+		new CopyWebpackPlugin([
+			{ from: "./config/webpack/static/favicon.ico", to: "../favicon.ico" }
+		]),
 		new webpack.DefinePlugin({
 			"process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV),
 			"process.env.GRAPH_URL": JSON.stringify(process.env.GRAPH_URL)
-		}),
-		new CleanWebpackPlugin()
+		})
 	];
 	if (isDev) {
 		plugins.push(new webpack.HotModuleReplacementPlugin());
