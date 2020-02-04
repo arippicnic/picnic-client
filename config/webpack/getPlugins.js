@@ -18,8 +18,8 @@ export default ({ isDev, webpack }) => {
 			filename: "../loadable-stats.json"
 		}),
 		new MiniCssExtractPlugin({
-			filename: isDev ? "[name].css" : "[name].[contenthash:8].css",
-			chunkFilename: isDev ? "[id].css" : "[id].[contenthash:8].css"
+			filename: "[name].css",
+			chunkFilename: "[id].css"
 		}),
 		new webpack.DefinePlugin({
 			"process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV),
