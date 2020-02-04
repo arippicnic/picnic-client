@@ -1,6 +1,7 @@
 import path from "path";
 import React from "react";
 import serialize from "serialize-javascript";
+import { minify } from "html-minifier";
 import { Helmet } from "react-helmet";
 import { Provider } from "react-redux";
 import { ApolloProvider } from "react-apollo";
@@ -60,5 +61,13 @@ export default (staticContext, req, routes, store, client) => {
       </body>
     </html>
   `;
-  return html;
+  const minifyConfig = {
+    collapseWhitespace: true,
+    removeComments: true,
+    trimCustomFragments: true,
+    minifyCSS: true,
+    minifyJS: true,
+    minifyURLs: true
+  };
+  return __DEV__ ? html : minify(html, minifyConfig);
 };
