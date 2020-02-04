@@ -1,3 +1,4 @@
+import path from "path";
 import ManifestPlugin from "webpack-manifest-plugin";
 import LoadablePlugin from "@loadable/webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
