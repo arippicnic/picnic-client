@@ -41,8 +41,7 @@ export default env => {
 		output: {
 			path: path.resolve(process.cwd(), "./build/public/assets"),
 			publicPath: "/assets/",
-			filename: "[name].js",
-			chunkFilename: "[id].js"
+			filename: "[name].js"
 		},
 		module: {
 			rules: [
