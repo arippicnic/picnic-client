@@ -3,11 +3,9 @@ import ManifestPlugin from "webpack-manifest-plugin";
 import LoadablePlugin from "@loadable/webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
-import { CleanWebpackPlugin } from "clean-webpack-plugin";
 
 export default ({ isDev, webpack }) => {
 	const plugins = [
-		new CleanWebpackPlugin(),
 		new ManifestPlugin({
 			fileName: path.resolve(
 				process.cwd(),

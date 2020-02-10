@@ -1,7 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import { Mutation, ApolloConsumer } from 'react-apollo'
 import { Container, Row, Col, Input, Form, Button } from "reactstrap";
+
+import { REGISTER_USER_MUT } from '../../graphql/mutations';
 
 function RegisterForm() {
   const usernameErrorText = () => (

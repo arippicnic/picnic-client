@@ -2,7 +2,7 @@
   "errors": [],
   "warnings": [],
   "version": "4.41.5",
-  "hash": "de84d24c3d5de22b6b7c",
+  "hash": "8df948665b2c4604863c",
   "publicPath": "/assets/",
   "outputPath": "F:\\PROJECT\\playground\\new-ssr-v4-client\\build\\public\\assets",
   "assetsByChunkName": {
@@ -28,7 +28,7 @@
     },
     {
       "name": "login.js",
-      "size": 19241,
+      "size": 12134,
       "chunks": [
         "login"
       ],
@@ -52,7 +52,7 @@
     },
     {
       "name": "main.js",
-      "size": 7642064,
+      "size": 7649934,
       "chunks": [
         "main"
       ],

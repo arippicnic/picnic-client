@@ -1,7 +1,7 @@
 import webpack from "webpack";
 import middleware from "webpack-dev-middleware";
 import hot from "webpack-hot-middleware";
-import webpackConfig from "../../../config/webpack/webpack.config.babel";
+import webpackConfig from "../.././config/webpack/webpack.config.babel";
 
 export default app => {
 	const wepackStatus = webpackConfig({ MODE: "dev" });

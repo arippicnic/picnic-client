@@ -1,15 +1,19 @@
 import path from "path";
 import helmet from 'helmet';
 import express from "express";
-import favicon from 'serve-favicon';
 import cors from "cors";
 import cookieParser from "cookie-parser";
+
+const { NODE_ENV } = process.env;
 
 export default app => {
 	app.use(helmet());
 	app.use(cookieParser());
 
 	app.use(cors());
-	// app.use(favicon(path.resolve(process.cwd(), 'build/public/favicon.ico')));
 	app.use(express.static(path.resolve(process.cwd(), "build/public")));
+	if (NODE_ENV === "development") {
+		const prod = require("./static").default;
+		prod(app);
+	}
 };
