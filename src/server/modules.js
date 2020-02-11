@@ -12,4 +12,8 @@ export default app => {
 
 	app.use(cors());
 	app.use(express.static(path.resolve(process.cwd(), "build/public")));
+	if (NODE_ENV === "development") {
+		const prod = require("./static").default;
+		prod(app);
+	}
 };
