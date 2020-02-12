@@ -2,7 +2,7 @@
   "errors": [],
   "warnings": [],
   "version": "4.41.5",
-  "hash": "64b7bb5825a26f6a4ff1",
+  "hash": "27104853b059c01f99e7",
   "publicPath": "/assets/",
   "outputPath": "F:\\PROJECT\\playground\\new-ssr-v4-client\\build\\public\\assets",
   "assetsByChunkName": {
@@ -10,10 +10,22 @@
     "login": "login.js",
     "main": [
       "main.css",
-      "main.js"
+      "main.js",
+      "main.5d655529dc06e08d227e.hot-update.js"
     ]
   },
   "assets": [
+    {
+      "name": "5d655529dc06e08d227e.hot-update.json",
+      "size": 46,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
     {
       "name": "home.js",
       "size": 3778,
@@ -39,6 +51,21 @@
       "emitted": false
     },
     {
+      "name": "main.5d655529dc06e08d227e.hot-update.js",
+      "size": 6515,
+      "chunks": [
+        "main"
+      ],
+      "chunkNames": [
+        "main"
+      ],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
       "name": "main.css",
       "size": 172323,
       "chunks": [
@@ -52,7 +79,7 @@
     },
     {
       "name": "main.js",
-      "size": 7649934,
+      "size": 7677251,
       "chunks": [
         "main"
       ],
@@ -71,7 +98,8 @@
       ],
       "assets": [
         "main.css",
-        "main.js"
+        "main.js",
+        "main.5d655529dc06e08d227e.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
@@ -84,7 +112,8 @@
       ],
       "assets": [
         "main.css",
-        "main.js"
+        "main.js",
+        "main.5d655529dc06e08d227e.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
@@ -117,134 +146,5 @@
       "debug": false
     }
   },
-  "children": [
-    {
-      "errors": [],
-      "warnings": [],
-      "publicPath": "/assets/",
-      "outputPath": "F:\\PROJECT\\playground\\new-ssr-v4-client\\build\\public\\assets",
-      "assetsByChunkName": {},
-      "assets": [],
-      "filteredAssets": 0,
-      "entrypoints": {
-        "mini-css-extract-plugin": {
-          "chunks": [
-            "mini-css-extract-plugin"
-          ],
-          "assets": [
-            "*"
-          ],
-          "children": {},
-          "childAssets": {}
-        }
-      },
-      "namedChunkGroups": {
-        "mini-css-extract-plugin": {
-          "chunks": [
-            "mini-css-extract-plugin"
-          ],
-          "assets": [
-            "*"
-          ],
-          "children": {},
-          "childAssets": {}
-        }
-      },
-      "logging": {
-        "webpack.buildChunkGraph.visitModules": {
-          "entries": [],
-          "filteredEntries": 2,
-          "debug": false
-        }
-      },
-      "children": [],
-      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--5-1!node_modules/postcss-loader/src/index.js??ref--5-2!src/assets/css/bootstrap.min.css"
-    },
-    {
-      "errors": [],
-      "warnings": [
-        "./src/assets/css/style.css (./node_modules/css-loader/dist/cjs.js??ref--5-1!./node_modules/postcss-loader/src??ref--5-2!./src/assets/css/style.css)\nModule Warning (from ./node_modules/postcss-loader/src/index.js):\nWarning\n\n(330:3) Gradient has outdated direction syntax. New syntax is like `to left` instead of `right`."
-      ],
-      "publicPath": "/assets/",
-      "outputPath": "F:\\PROJECT\\playground\\new-ssr-v4-client\\build\\public\\assets",
-      "assetsByChunkName": {},
-      "assets": [],
-      "filteredAssets": 0,
-      "entrypoints": {
-        "mini-css-extract-plugin": {
-          "chunks": [
-            "mini-css-extract-plugin"
-          ],
-          "assets": [
-            "*"
-          ],
-          "children": {},
-          "childAssets": {}
-        }
-      },
-      "namedChunkGroups": {
-        "mini-css-extract-plugin": {
-          "chunks": [
-            "mini-css-extract-plugin"
-          ],
-          "assets": [
-            "*"
-          ],
-          "children": {},
-          "childAssets": {}
-        }
-      },
-      "logging": {
-        "webpack.buildChunkGraph.visitModules": {
-          "entries": [],
-          "filteredEntries": 2,
-          "debug": false
-        }
-      },
-      "children": [],
-      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--5-1!node_modules/postcss-loader/src/index.js??ref--5-2!src/assets/css/style.css"
-    },
-    {
-      "errors": [],
-      "warnings": [],
-      "publicPath": "/assets/",
-      "outputPath": "F:\\PROJECT\\playground\\new-ssr-v4-client\\build\\public\\assets",
-      "assetsByChunkName": {},
-      "assets": [],
-      "filteredAssets": 0,
-      "entrypoints": {
-        "mini-css-extract-plugin": {
-          "chunks": [
-            "mini-css-extract-plugin"
-          ],
-          "assets": [
-            "*"
-          ],
-          "children": {},
-          "childAssets": {}
-        }
-      },
-      "namedChunkGroups": {
-        "mini-css-extract-plugin": {
-          "chunks": [
-            "mini-css-extract-plugin"
-          ],
-          "assets": [
-            "*"
-          ],
-          "children": {},
-          "childAssets": {}
-        }
-      },
-      "logging": {
-        "webpack.buildChunkGraph.visitModules": {
-          "entries": [],
-          "filteredEntries": 2,
-          "debug": false
-        }
-      },
-      "children": [],
-      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--6-1!node_modules/postcss-loader/src/index.js??ref--6-2!src/app/app.module.scss"
-    }
-  ]
+  "children": []
 }

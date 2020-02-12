@@ -13,6 +13,9 @@ const Header = ({ logoutUser }) => {
 				<Link to="/">Homes</Link>
 			</li>
 			<li>
+				<Link to="/create-post">Create</Link>
+			</li>
+			<li>
 				<Link to="/list">List</Link>
 			</li>
 			<li>

@@ -1,5 +1,5 @@
 import App from "./app";
-import { signUp, signIn, Home, List, NotFound } from "./pages";
+import { signUp, CreatePost, signIn, Home, List, NotFound } from "./pages";
 
 export default [
   {
@@ -19,6 +19,11 @@ export default [
         path: "/signUp",
         exact: true,
         component: signUp
+      },
+      {
+        path: "/create-post",
+        exact: true,
+        component: CreatePost
       },
       {
         path: "/list",
