@@ -12,7 +12,7 @@ const App = ({ route, auth, fetchCurrentUser }) => {
 	try {
 		if (!auth) fetchCurrentUser();
 	} catch (e) {
-		// console.log(e);
+		console.log(e);
 	}
 	return (
 		<div className={styles.app}>

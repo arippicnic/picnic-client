@@ -4,7 +4,7 @@ import { createUploadLink } from "apollo-upload-client";
 import { ApolloLink } from "apollo-link";
 import { onError } from "apollo-link-error";
 
-const isProd = false;
+const isProd = process.env === "production";
 
 const cache = new InMemoryCache({
   addTypename: false
