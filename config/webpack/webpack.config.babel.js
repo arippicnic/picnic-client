@@ -68,7 +68,11 @@ export default env => {
 								sourceMap: true
 							}
 						},
-						{ loader: "postcss", options: { sourceMap: true } }
+						{ loader: "postcss", options: { sourceMap: true } },
+						{
+							loader: "sass-loader",
+							options: { sourceMap: true }
+						}
 					]
 				},
 				{
@@ -94,7 +98,11 @@ export default env => {
 								sourceMap: true
 							}
 						},
-						{ loader: "postcss", options: { sourceMap: true } }
+						{ loader: "postcss", options: { sourceMap: true } },
+						{
+							loader: "sass-loader",
+							options: { sourceMap: true }
+						}
 					]
 				}
 			]
