@@ -104,27 +104,7 @@ export default env => {
 							options: { sourceMap: true }
 						}
 					]
-				},
-				{
-					test: /\.(woff2?|ttf|otf|eot)$/,
-					loader: 'file'
-				},
-				{
-					test: /\.(gif|png|jpe?g|webp|svg)$/,
-					use: [
-						{
-							// Any image below or equal to 10K will be converted to inline base64 instead
-							loader: 'url',
-							options: { limit: 10 * 1024, name: '[name].[hash:8].[ext]' }
-						},
-						{
-							loader: 'image-webpack',
-							// For each optimizer you wish to configure
-							// Plz check https://github.com/tcoopman/image-webpack-loader#usage
-							options: { disable: true }
-						}
-					]
-				},
+				}
 			]
 		},
 		resolve: {
