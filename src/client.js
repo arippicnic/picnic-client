@@ -5,7 +5,6 @@ import { createStore, applyMiddleware } from "redux";
 import { ApolloProvider } from "react-apollo";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { Provider } from "react-redux";
-import { AppContainer } from "react-hot-loader";
 import { renderRoutes } from "react-router-config";
 import { loadableReady } from "@loadable/component";
 import { BrowserRouter } from "react-router-dom";
@@ -23,13 +22,10 @@ const store = createStore(
 );
 
 const render = Routes => {
-  const renderMethod = module.hot ? ReactDOM.render : ReactDOM.hydrate;
-  renderMethod(
+  ReactDOM.hydrate(
     <Provider store={store}>
       <ApolloProvider client={client}>
-        <AppContainer>
-          <BrowserRouter>{renderRoutes(Routes)}</BrowserRouter>
-        </AppContainer>
+        <BrowserRouter>{renderRoutes(Routes)}</BrowserRouter>
       </ApolloProvider>
     </Provider>,
     document.getElementById("root")
@@ -39,15 +35,3 @@ const render = Routes => {
 loadableReady(() => {
   render(routes);
 });
-
-if (module.hot) {
-  module.hot.accept("./routes", () => {
-    try {
-      const nextRoutes = require("./routes").default;
-
-      render(nextRoutes);
-    } catch (error) {
-      console.error(error);
-    }
-  });
-}

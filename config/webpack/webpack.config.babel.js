@@ -127,12 +127,6 @@ export default env => {
 				},
 			]
 		},
-		resolve: {
-			modules: ["src", "node_modules"],
-			descriptionFiles: ["package.json"],
-			extensions: [".js"],
-			alias: { "react-dom": "@hot-loader/react-dom" }
-		},
 		resolveLoader: {
 			moduleExtensions: ["-loader"]
 		},
