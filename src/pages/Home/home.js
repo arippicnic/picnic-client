@@ -1,12 +1,23 @@
 import React, { memo } from "react";
 import { Helmet } from "react-helmet";
 
+import { template, organisms, molecules, atoms } from "../../components";
+
 export const Home = () => {
 	return (
-		<div>
+		<template.container>
 			<Helmet title="Home" />
-			Home Page 2
-		</div>
+			<organisms.header>
+				<atoms.logo />
+				<molecules.navLink>
+					<li>link</li>
+					<li>
+						<atoms.userImage />
+						<span>Jonas</span>
+					</li>
+				</molecules.navLink>
+			</organisms.header>
+		</template.container>
 	);
 };
 

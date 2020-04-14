@@ -1,4 +1,4 @@
-import App from "./app";
+import App from "./App";
 import { signUp, CreatePost, signIn, Home, List, NotFound } from "./pages";
 
 export default [

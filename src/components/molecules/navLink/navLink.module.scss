@@ -1,0 +1,19 @@
+.navLink {
+    align-self: stretch;
+
+    display: flex;
+    align-items: center;
+
+    &>* {
+        padding: 0 2rem;
+        cursor: pointer;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    &>*:hover {
+        background-color: var(--color-grey-light-2);
+    }
+
+}

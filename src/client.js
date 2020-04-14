@@ -14,9 +14,6 @@ import client from "./services/apollo";
 import routes from "./routes";
 import reducers from "./reducers";
 
-// import './assets/css/bootstrap.min.css';
-import './assets/sass/main.scss';
-
 const store = createStore(
   reducers,
   window.__INITIAL_STATE__,

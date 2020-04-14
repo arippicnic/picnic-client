@@ -28,7 +28,7 @@ const errorLink = onError(
         graphQLErrors.find(err => err.extensions.code === "UNAUTHENTICATED")
       ) {
       }
-      graphQLErrors.map(({ message, path, extensions, locations }) =>
+      graphQLErrors.map(({ message}) =>
         !isProd ? console.log(`Error: Message: ${message}`) : false
       );
     }
