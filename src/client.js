@@ -26,7 +26,7 @@ const store = createStore(
 );
 
 const render = Routes => {
-   const renderMethod = module.hot ? ReactDOM.render : ReactDOM.hydrate;
+  const renderMethod = module.hot ? ReactDOM.render : ReactDOM.hydrate;
   renderMethod(
     <Provider store={store}>
       <ApolloProvider client={client}>
