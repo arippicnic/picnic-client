@@ -28,7 +28,7 @@ const errorLink = onError(
         graphQLErrors.find(err => err.extensions.code === "UNAUTHENTICATED")
       ) {
       }
-      graphQLErrors.map(({ message}) =>
+      graphQLErrors.map(({ message, path, extensions, locations }) =>
         !isProd ? console.log(`Error: Message: ${message}`) : false
       );
     }
@@ -38,7 +38,7 @@ const errorLink = onError(
   }
 );
 
-const links = [errorLink, linkHttp];
+const links = [linkHttp];
 const link = ApolloLink.from(links);
 
 export default new ApolloClient({

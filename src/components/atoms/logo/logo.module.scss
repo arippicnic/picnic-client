@@ -1,4 +1,11 @@
 .logo {
-    height: 3.25rem;
-    margin-left: 2rem;
+    &_1 {
+        height: 3.25rem;
+        margin-left: 2rem;
+    }
+
+    &_2 {
+        height: 7rem;
+    }
+
 }

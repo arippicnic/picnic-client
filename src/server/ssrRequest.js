@@ -44,7 +44,7 @@ export default app => {
 		};
 		(async () => {
 			try {
-				const links = [errorLink, linkHttp];
+				const links = [linkHttp];
 				const link = ApolloLink.from(links);
 
 				const client = await new ApolloClient({

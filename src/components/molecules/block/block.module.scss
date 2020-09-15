@@ -1,0 +1,14 @@
+.block {
+
+    &_1 {
+        flex: 0 0 50%;
+        margin-right: 4.5rem;
+    }
+
+    &_2 {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        // align-items: center;
+    }
+}

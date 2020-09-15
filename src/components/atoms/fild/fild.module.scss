@@ -1,0 +1,28 @@
+.field {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    padding: 0.5rem 0;
+    color: var(--color-grey-light-1);
+    background-color: var(--color-bg-dark);
+    border-bottom: 2px solid var(--color-grey-light-1);
+    font-size: 20px;
+    padding: 1rem 0;
+    filter: none;
+
+    &:focus,
+    valid {
+        border-bottom: 2px solid var(--color-primary-2);
+    }
+    
+}
+input:-webkit-autofill {
+    -webkit-text-fill-color: var(--color-grey-light-1);
+    transition: background-color 5000s ease-in-out 0s;
+    border-bottom: 2px solid var(--color-grey-light-1);
+    font-size: 20px;
+     &:focus,
+     valid {
+         border-bottom: 2px solid var(--color-primary-2);
+     }
+}

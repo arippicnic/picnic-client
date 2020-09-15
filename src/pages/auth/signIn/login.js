@@ -5,6 +5,8 @@ import { Button } from 'reactstrap';
 
 import { loginUser } from "../../../actions";
 
+import { templates, molecules, atoms } from "../../../components";
+
 const LoginPage = ({ loginUser }) => {
 	const [uValue, setValue] = useState({
 		email: "",
@@ -23,16 +25,17 @@ const LoginPage = ({ loginUser }) => {
 		const res = await loginUser(email, password);
 	};
 	return (
-		<div>
+		<templates.container container="auth">
 			<Helmet title="Login" />
-			<form onSubmit={handleSubmit}>
-				<label>email</label>
-				<input name="email" onChange={asdf} />
-				<label>password</label>
-				<input name="password" onChange={asdf} />
-				<Button color="primary" type="submit">submit</Button>
-			</form>
-		</div>
+			<atoms.logo className="m-5" type="auth" />
+			<molecules.form onSubmit={handleSubmit}>
+				<atoms.label>Email</atoms.label>
+				<atoms.fild type="text" className="m-2" />
+				<atoms.label>Password</atoms.label>
+				<atoms.fild type="password" className="m-5" />
+				<atoms.button type="submit">asdasd</atoms.button>
+			</molecules.form>
+		</templates.container>
 	);
 };
 

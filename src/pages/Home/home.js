@@ -1,14 +1,14 @@
 import React, { memo } from "react";
 import { Helmet } from "react-helmet";
 
-import { template, organisms, molecules, atoms } from "../../components";
+import { templates, organisms, molecules, atoms } from "../../components";
 
 export const Home = () => {
 	return (
-		<template.container>
+		<templates.container container="base">
 			<Helmet title="Home" />
 			<organisms.header>
-				<atoms.logo />
+				<atoms.logo type="header" />
 				<molecules.navLink>
 					<li>link</li>
 					<li>
@@ -17,7 +17,22 @@ export const Home = () => {
 					</li>
 				</molecules.navLink>
 			</organisms.header>
-		</template.container>
+			<organisms.content>
+				<molecules.block block="1">
+					<molecules.item>
+						item 1
+					</molecules.item>
+				</molecules.block>
+				<molecules.block block="2">
+					<molecules.item>
+						item 2
+					</molecules.item>
+					<molecules.item>
+						item 3
+					</molecules.item>
+				</molecules.block>
+			</organisms.content>
+		</templates.container>
 	);
 };
 
